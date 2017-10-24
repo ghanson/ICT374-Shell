@@ -2,4 +2,4 @@
 #include <stdlib.h>
 #include <string.h>
 
-void fork();
+void shellFork();

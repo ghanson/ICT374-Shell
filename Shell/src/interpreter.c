@@ -1,31 +1,31 @@
 #include "interpreter.h"
 
-void Interpreter(char * commandLine);
+void interpreter(char * line)
 {
 
 }
 
-void Wildcard(char * command);
+void wildcard(char * command)
 {
 
 }
 
-void Background(char * command);
+void background(char * command)
 {
 
 }
 
-void Sequential(char * command);
+void sequential(char * command)
 {
 
 }
 
-void Pipe(char * command);
+void pipe(char * command)
 {
 
 }
 
-void Program(char * command);
+void program(char * command)
 {
 
 }

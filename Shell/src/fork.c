@@ -1,6 +1,6 @@
 #include "fork.h"
 
-void fork()
+void shellFork()
 {
 
 }

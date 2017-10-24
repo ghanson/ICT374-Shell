@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void interpreter(char * commandLine);
+void interpreter(char * line);
 
 void wildcard(char * command);
 
