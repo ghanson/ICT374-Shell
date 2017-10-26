@@ -6,18 +6,6 @@
 #include "interpreter.h"
 #include "tokeniser.h"
 
-#define BUFSIZE 1024
-
-#define CR 177583
-#define CD 5863276
-#define PROMPT 359559495
-#define PWD 193502992
-#define EXIT 2090237503
-#define FORK 2090263927
-
-char pwd[BUFSIZE];
-char path[BUFSIZE];
-char prompt[BUFSIZE];
 
 const unsigned long hash(const char *str) {
     unsigned long hash = 5381;
@@ -31,19 +19,20 @@ const unsigned long hash(const char *str) {
 
 int main(int argc, char * argv[])
 {
-    strncpy(prompt, "@", sizeof(prompt)); //should use environment variable
-    strncpy(path, "/home/", sizeof(path)); //should use environment variable
-    strncpy(pwd, "/home/", sizeof(path)); //should use environment variable
+    strncpy(g_prompt, "@", sizeof(g_prompt)); //should use environment variable
+    strncpy(g_path, "PATH=/home/", sizeof(g_path)); //should use environment variable
+    strncpy(g_pwd, "/home/", sizeof(g_pwd)); //should use environment variable
 
     bool exit = false;
     char commandLine[BUFSIZE];
     char delimiters[2] = "\n ";
     char * tokens[MAX_NUM_TOKENS];
+    int ntok = 0;
 
     /*char cd[] = "cd";
     char pwd2[] = "pwd";
     char car[] = "\n";
-    char prompt[] = "prompt";
+    char g_prompt[] = "prompt";
     char exit[] = "exit";
     char fork[] = "fork";
 
@@ -56,7 +45,7 @@ int main(int argc, char * argv[])
 
     while(!exit)
     {
-        printf("%s: ", prompt);
+        printf("%s: ", g_prompt);
         fgets(commandLine, BUFSIZE, stdin);
         tokeniser(tokens, commandLine, delimiters, false);
 
@@ -67,10 +56,10 @@ int main(int argc, char * argv[])
                 case CR:
                     break;
                 case PROMPT:
-                    strncpy(prompt, tokens[i+1], sizeof(prompt));
+                    strncpy(g_prompt, tokens[i+1], sizeof(g_prompt));
                     break;
                 case PWD:
-                    printf("%s", pwd);
+                    printf("%s", g_pwd);
                     break;
                 case CD:
                     if(tokens[i+1])
@@ -87,7 +76,7 @@ int main(int argc, char * argv[])
                     shellFork();
                     break;
                 default:
-                    interpreter(commandLine);
+                    interpreter(tokens, ntok);
             }
         }
     }
