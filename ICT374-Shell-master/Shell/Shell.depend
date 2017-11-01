@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1508835829 source:c:\users\geoff\documents\ict374\shell\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	"directorywalk.h"
+	"fork.h"
+	"interpreter.h"
+	"tokeniser.h"
+
+1508830772 c:\users\geoff\documents\ict374\shell\include\directorywalk.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1508834827 c:\users\geoff\documents\ict374\shell\include\fork.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1508835369 c:\users\geoff\documents\ict374\shell\include\interpreter.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1508835102 c:\users\geoff\documents\ict374\shell\include\tokeniser.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+
+1508830856 source:c:\users\geoff\documents\ict374\shell\src\directorywalk.c
+	"directorywalk.h"
+
+1508834827 source:c:\users\geoff\documents\ict374\shell\src\fork.c
+	"fork.h"
+
+1508835534 source:c:\users\geoff\documents\ict374\shell\src\interpreter.c
+	"interpreter.h"
+
+1508835102 source:c:\users\geoff\documents\ict374\shell\src\tokeniser.c
+	"tokeniser.h"
+
