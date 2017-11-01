@@ -5,5 +5,4 @@
 
 #define MAX_NUM_TOKENS  100
 
-void tokeniser(char* tokens[], char * inputLine, char * delimiters, bool keepDelims );
-
+int tokenise (char line[], char *token[], char delimiters[], bool keepDelimiters);
